@@ -1,0 +1,8 @@
+[data-simplebar],
+[data-simplebar] > ::ng-deep .simplebar-wrapper {
+  height: 100%;
+}
+
+[data-simplebar] {
+  /*padding: 25px;*/
+}

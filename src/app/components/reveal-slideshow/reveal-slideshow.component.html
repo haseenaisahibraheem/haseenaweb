@@ -1,0 +1,53 @@
+<div>
+  <main
+    ngTouch
+    (swipeUp)="onScrollUp()"
+    (swipeDown)="onScrollDown()"
+    ngMouseWheel
+    (scrollUp)="onScrollUp()"
+    (scrollDown)="onScrollDown()"
+  >
+    <div class="slideshow" #slideshow imagesLoaded (always)="load()">
+      <div class="slide" *ngFor="let slideNr of [1,2,3]">
+        <div class="slide__img-wrap">
+          <div
+            class="slide__img"
+            [style.backgroundImage]="'url(./assets/images/slideshow/hero/' + slideNr + '.jpg)'"
+          ></div>
+          <div class="slide__img-reveal"></div>
+        </div>
+        <div class="slide__title-wrap">
+          <h3 class="slide__title">
+            <span class="slide__title-inner">Pastiche Skin</span>
+          </h3>
+          <h4 class="slide__subtitle">
+            <span class="slide__subtitle-inner">by Paul Clement</span>
+          </h4>
+          <p class="slide__quote">
+            <em>"A masterpiece!"</em> &mdash; Robert Waters
+          </p>
+          <a class="slide__explore"
+            ><span class="slide__explore-inner">Explore</span></a
+          >
+        </div>
+        <span class="slide__number">0{{slideNr}}</span>
+        <div class="slide__side">
+          <span class="slide__info">Calle Pedro Valdivia &mdash; 2015</span>
+          <h5 class="slide__category">Madrid, Spain</h5>
+        </div>
+      </div>
+    </div>
+
+    <button class="slider--scroll active" (click)="onScrollDown()">
+      <span class="text desktop">
+        <span>Scroll to Explore</span>
+        <span>Scroll to Explore</span>
+      </span>
+      <span class="text mobile"> <span>Scroll</span> <span>Scroll</span> </span>
+      <span class="line line-1"></span> <span class="line line-2"></span>
+    </button>
+  </main>
+  <div class="loader" #loader>
+    <div class="loader__inner"></div>
+  </div>
+</div>
